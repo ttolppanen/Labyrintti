@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Ukko
+  - Muuri
+  - "Silm\xE4n n\xE4k\xF6kentt\xE4"
+  - Vihollinen
+  - Avain
+  - AseKadessa
+  - AseMaassa
+  - Ammus
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - Muuri
+  - Pelaaja
+  - TuliPallo
+  - Vihollinen
+  - Varjot
+  - Ase
+  - Ammus
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Kartta
+    uniqueID: 797780437
+    locked: 0
