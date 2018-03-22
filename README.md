@@ -7,4 +7,4 @@ Labyrintin luonti: Assets/Scriptejä/LuoLabyrintti.cs
 
 Katsottavan kartan luonti: Assets/Scriptejä/LuoKartta.cs
 
-Löydetään oikea polku (Käytetty esim. että löytyy oikeat palat mihin voi laittaa portteja eteen): Assets/Scriptejä/rekursioJuttuja.cs
+Löydetään oikea polku (Käytetty esim. että löytyy oikeat paikat mihin voi laittaa portteja): Assets/Scriptejä/rekursioJuttuja.cs
