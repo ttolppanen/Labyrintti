@@ -4,9 +4,4 @@ using UnityEngine;
 
 public class ItemeidenSiirto : MonoBehaviour {
 
-	public GameObject Reppu;
-
-	void OnMouseDown(){
-		
-	}
 }
