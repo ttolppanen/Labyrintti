@@ -9,6 +9,7 @@ public class Liikkuminen : MonoBehaviour {
 	public float maxNopeus;
 	public float syoksyVoima;
 	public float syoksyCooldown;
+	public GameObject inventory;
 	float syoksyAika;
 	public AudioClip miekkaLyonti;
 	Rigidbody2D rb;
@@ -20,15 +21,11 @@ public class Liikkuminen : MonoBehaviour {
 		animaatio = GetComponent<Animator> ();
 	}
 	void Update() {
-		if (kartta == null) {
-			kartta = GameObject.Find ("KarttaPohja(Clone)");
-			kartta.SetActive (false);
-		}
 		if (Input.GetKeyDown (KeyCode.Tab)) {
-			kartta.SetActive (true);
+			inventory.SetActive (true);
 		}
 		if (Input.GetKeyUp (KeyCode.Tab)) {
-			kartta.SetActive (false);
+			inventory.SetActive (false);
 		}
 		if (Input.GetKeyDown ("r")) {
 			Application.LoadLevel (Application.loadedLevel);

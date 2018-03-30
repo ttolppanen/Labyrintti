@@ -3,6 +3,7 @@
 	_MainTex("Texture", 2D) = "white"
 	_ReunaPisteet("Pisteet", vector) = (0, 0, 0, 0)
 	_UkonPaikka("Ukon Pisteet", vector) = (0, 0, 0, 0)
+	_TehdaankoVarjot("Tehdäänkö varjot", int) = 1
 	}
 	SubShader
 	{
@@ -52,19 +53,22 @@
 			float4 _MainTex_ST;
 			float4 _ReunaPisteet;
 			float4 _UkonPaikka;
+			int _TehdaankoVarjot;
 
 			float4 frag(v2f i) : SV_Target
 			{
 				UNITY_APPLY_FOG(i.fogCoord, col);
 				float4 col = tex2D(_MainTex, i.uv);
-				float2 suunta = float2(_UkonPaikka.x, _UkonPaikka.y) - i.uv;
 				col.a = 0;
-				float2 ekaKulma = float2(_ReunaPisteet.x, _ReunaPisteet.y);
-				float2 kulmienSuunta = float2(_ReunaPisteet.z, _ReunaPisteet.w) - ekaKulma;
-				float v = (i.uv.y * suunta.x - ekaKulma.y * suunta.x + suunta.y * ekaKulma.x - suunta.y * i.uv.x) / (suunta.x * kulmienSuunta.y - suunta.y * kulmienSuunta.x);
-				float u = (ekaKulma.x + v * kulmienSuunta.x - i.uv.x) / suunta.x;
-				if (v >= 0 && u >= 0 && v <= 1 && u <= 1){
-					col = float4(0, 0, 0, 1);
+				if(_TehdaankoVarjot == 1){
+					float2 suunta = float2(_UkonPaikka.x, _UkonPaikka.y) - i.uv;
+					float2 ekaKulma = float2(_ReunaPisteet.x, _ReunaPisteet.y);
+					float2 kulmienSuunta = float2(_ReunaPisteet.z, _ReunaPisteet.w) - ekaKulma;
+					float v = (i.uv.y * suunta.x - ekaKulma.y * suunta.x + suunta.y * ekaKulma.x - suunta.y * i.uv.x) / (suunta.x * kulmienSuunta.y - suunta.y * kulmienSuunta.x);
+					float u = (ekaKulma.x + v * kulmienSuunta.x - i.uv.x) / suunta.x;
+					if (v >= 0 && u >= 0 && v <= 1 && u <= 1){
+						col = float4(0, 0, 0, 1);
+					}
 				}
 				return col;
 			}

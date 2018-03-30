@@ -178,7 +178,7 @@ public class LuoLabyrintti : MonoBehaviour {
 				//EI tehdä mitään
 			//EI valmis
 		}
-		Instantiate (kartta, new Vector3(ukko.transform.position.x, ukko.transform.position.y, 0), Quaternion.identity);
+		//Instantiate (kartta, new Vector3(ukko.transform.position.x, ukko.transform.position.y, 0), Quaternion.identity);
 		Instantiate (loydaLoppu, Vector3.zero, Quaternion.identity);
 		for (int i = 0; i < silmienSpawnausMaara; i++){
 			Instantiate (hirviot[Random.Range(0, hirviot.Length - 1)], new Vector3(Random.Range(0, labyrintinKoko) * 10 + 5, Random.Range(0, labyrintinKoko) * 10 + 5, 2.5f), Quaternion.identity);

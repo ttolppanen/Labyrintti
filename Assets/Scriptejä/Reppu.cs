@@ -22,22 +22,10 @@ public class Reppu : MonoBehaviour {
 		kuvat.Add (kuvat3);
 		kuvat.Add (kuvat4);
 		kuvat.Add (kuvat5);
+		reppu [4, 2] = kasi.transform.GetChild (0).gameObject;
 	}
 
 	void Update () {
-		/*for(int i = 0; i < 9; i++){ Vanha siirtäminen?
-			if(Input.GetKeyDown((i + 1).ToString()) && reppu[i] != null && reppu[i].name.Substring(0, 3) != aseKadessa.name.Substring(0, 3)){
-				Transform esineRepussa = reppu [i].transform;
-				esineRepussa.position = kasi.transform.position;
-				esineRepussa.transform.rotation = kasi.transform.rotation;
-				esineRepussa.parent = kasi.transform;
-				reppu [y, x] = aseKadessa;
-				aseKadessa.transform.parent = null;
-				aseKadessa.transform.position = new Vector3 (-10, -10, 0);
-				break;
-			}
-		}	*/
-
 		//UI
 		for(int y = 0; y < 5; y++){
 			for (int x = 0; x < 4; x++) {
@@ -49,13 +37,30 @@ public class Reppu : MonoBehaviour {
 			}
 		}
 		GameObject esineKadessa = kasi.transform.childCount > 0 ? kasi.transform.GetChild (0).gameObject : null;
-		Debug.Log (esineKadessa);
-		if(reppu[4, 2] == null && esineKadessa != null){
+		/*if(reppu[4, 2] == null && esineKadessa != null){
 			Destroy (esineKadessa.gameObject);
 		} 
 		else if(reppu[4, 2] != esineKadessa){
 			Destroy (esineKadessa);
-			Instantiate(reppu [4, 2], kasi.transform).transform.position = kasi.transform.position;
+			GameObject aseKateen = Instantiate(reppu [4, 2], kasi.transform);
+			aseKateen.transform.position = kasi.transform.position;
+			aseKateen.GetComponent<MiekkaScripti> ().vahinko = reppu [4, 2].GetComponent<MiekkaScripti> ().vahinko;
+		}*/
+		Debug.Log (esineKadessa);
+		if(reppu[4, 2] == null && esineKadessa != null){
+			esineKadessa.transform.position = new Vector3(-10, -10, 0);
+			esineKadessa.transform.parent = null;
+			esineKadessa = null;
+		} 
+		else if(reppu[4, 2] != esineKadessa){
+			if (esineKadessa != null) {
+				esineKadessa.transform.position = new Vector3 (-10, -10, 0);
+				esineKadessa.transform.parent = null;
+			}
+			esineKadessa = reppu [4, 2];
+			esineKadessa.transform.parent = kasi.transform;
+			esineKadessa.transform.position = kasi.transform.position;
+			esineKadessa.transform.rotation = kasi.transform.rotation;
 		}
 	}
 

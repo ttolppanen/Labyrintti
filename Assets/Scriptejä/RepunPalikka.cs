@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RepunPalikka : MonoBehaviour {
 
@@ -12,6 +13,9 @@ public class RepunPalikka : MonoBehaviour {
 	Vector2 repunAlareuna;
 	bool olenKannossa;
 	GameObject minunKuva;
+	GameObject tekstiPalikka;
+	bool siirraKuvaTakaisin; //Siirto tässä framessa, mutta piirto ens framessa, joten tämä on ratkaisu :D
+	bool tekstiPalikkaOnLuotu;
 
 	void Awake(){
 		rOm = repunOminaisuudet.GetComponent<RepunOminaisuuksia> ();
@@ -22,6 +26,10 @@ public class RepunPalikka : MonoBehaviour {
 	}
 
 	void Update(){
+		if(siirraKuvaTakaisin){
+			siirraKuvaTakaisin = false;
+			minunKuva.transform.position = transform.position;
+		}
 		minunKuva = transform.GetChild (0).gameObject;
 		if(Input.GetMouseButtonDown(0) && !rOm.onkoKannossa && ollaankoSisalla()){
 			olenKannossa = true;
@@ -34,31 +42,19 @@ public class RepunPalikka : MonoBehaviour {
 			RaycastHit2D[] osumat = Physics2D.RaycastAll (Input.mousePosition, Camera.main.ScreenPointToRay(Input.mousePosition).direction);
 			bool loytyko = false;
 			foreach(RaycastHit2D hit in osumat){
-				Debug.Log (hit.transform.tag);
 				if(hit.transform.tag == "RepunPalikka" && hit.transform != transform){
-					//Kuvat
-					/*Transform uudenPaikanEsine = hit.transform.GetChild (0);
-					*/Transform pudotusPaikka = hit.transform;
-					minunKuva.transform.position = transform.position;
-					/*minunKuva.transform.parent = pudotusPaikka;
-					minunKuva.transform.position = uudenPaikanEsine.parent.transform.position;
-					uudenPaikanEsine.parent = transform;*/
-					//Oikeat esineet
+					siirraKuvaTakaisin = true;
+					Transform pudotusPaikka = hit.transform;
 					string uusiIndeksi = pudotusPaikka.name.Substring(0, 2);
 					string tamaIndeksi = gameObject.name.Substring(0, 2);
 					GameObject uusiItemi = esineReppu [int.Parse(uusiIndeksi.Substring (0, 1)), int.Parse(uusiIndeksi.Substring (1, 1))];
 					esineReppu [int.Parse (uusiIndeksi.Substring (0, 1)), int.Parse (uusiIndeksi.Substring (1, 1))] = esineReppu [int.Parse (tamaIndeksi.Substring (0, 1)), int.Parse (tamaIndeksi.Substring (1, 1))];
 					esineReppu [int.Parse (tamaIndeksi.Substring (0, 1)), int.Parse (tamaIndeksi.Substring (1, 1))] = uusiItemi;
-					ukko.GetComponent<Reppu> ().reppu = esineReppu;
 					loytyko = true;
 					rOm.onkoKannossa = false;
 					olenKannossa = false;
 					break;
 				}
-				/*else if(hit.transform.tag == "EsineetPäällä" && hit.transform != transform && hit.transform.name == "Käsi"){
-					Transform pudotusPaikka = hit.transform;
-					minunKuva.transform.position = transform.position;
-				}*/
 			}
 			if(!loytyko){
 				minunKuva.transform.position = transform.position;
@@ -66,10 +62,21 @@ public class RepunPalikka : MonoBehaviour {
 				olenKannossa = false;
 			}
 		}
+		//Teksti boxi
+		if(ollaankoSisalla() && !tekstiPalikkaOnLuotu && esineReppu [int.Parse (gameObject.name.Substring (0, 1)), int.Parse (gameObject.name.Substring (1, 1))] != null){
+			tekstiPalikkaOnLuotu = true;
+			tekstiPalikka = esineReppu [int.Parse (gameObject.name.Substring (0, 1)), int.Parse (gameObject.name.Substring (1, 1))].GetComponent<EsineenOminaisuudet> ().luoTekstiPalikka (transform.position, transform);
+
+		}
+		if(!ollaankoSisalla() && tekstiPalikka != null){
+			tekstiPalikkaOnLuotu = false;
+			Destroy (tekstiPalikka);
+		}
 	}
+
 	bool ollaankoSisalla(){
-		Vector2 oikeaPaikka = new Vector2 (Camera.main.ScreenToWorldPoint(transform.position).x - palikanKoko / 2, Camera.main.ScreenToWorldPoint(transform.position).y - palikanKoko / 2);
-		Vector3 hiirenPaikka = Camera.main.ScreenToWorldPoint (Input.mousePosition);
+		Vector2 oikeaPaikka = new Vector2 (transform.position.x - palikanKoko / 2, transform.position.y - palikanKoko / 2);
+		Vector3 hiirenPaikka = Input.mousePosition;
 		if(hiirenPaikka.x > oikeaPaikka.x && hiirenPaikka.x < oikeaPaikka.x + palikanKoko && hiirenPaikka.y > oikeaPaikka.y && hiirenPaikka.y < oikeaPaikka.y + palikanKoko){
 			return true;
 		}
