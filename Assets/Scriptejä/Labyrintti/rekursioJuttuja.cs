@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class rekursioJuttuja : MonoBehaviour {
+public class rekursioJuttuja : MonoBehaviour { // ILMEISESTI PORTIT OVAT AINA MUKANA KAIKISSA MAA PALIKOISSA, KATSO SIELTÄ JA LUO LABYRINTTI SCRIPTISTÄ. sekavaa
 
 	public GameObject avain;
 	public int porttienMaara;

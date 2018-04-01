@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4702791597800456}
   - component: {fileID: 114506472630534428}
   m_Layer: 0
-  m_Name: loydaLoppu
+  m_Name: Portti
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52,4 +52,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   avain: {fileID: 1677451524179242, guid: 671bcd3100fb82841ba1fbe20ad1ae39, type: 2}
-  porttienMaara: 0
+  porttienMaara: 4

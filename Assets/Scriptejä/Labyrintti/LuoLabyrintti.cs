@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class LuoLabyrintti : MonoBehaviour {
 
+	public float iteminSpawnausTodennakoisyys;
+	public GameObject[] spawnattavatItemit = new GameObject[1];
+
 	public float tnKaksiPalaa;
 	public float tnKolmePalaa;
 	public float tnNeljaPalaa;
@@ -21,6 +24,8 @@ public class LuoLabyrintti : MonoBehaviour {
 	List<List<int>> karttaTarkistettavistaPisteista = new List<List<int>>(); // 1 = tarkistettava, 2 = tarkistettu
 	List<List<int>> tarkistettavatPisteet = new List<List<int>>();
 	List<List<int>> loydetaanTarkistettavatPisteet = new List<List<int>>();
+	List<List<bool>> itemienSpawnaus = new List<List<bool>>();
+
 
 	void Awake () {
 		//Luodaan listat
@@ -46,6 +51,17 @@ public class LuoLabyrintti : MonoBehaviour {
 			karttaTarkistettavistaPisteista.Add (new List<int> ());
 			for (int x = 0; x < labyrintinKoko; x++) { 
 				karttaTarkistettavistaPisteista [y].Add (1);
+			}
+		}
+		for (int y = 0; y < labyrintinKoko; y++) {
+			itemienSpawnaus.Add (new List<bool> ());
+			for (int x = 0; x < labyrintinKoko; x++) { 
+				if(iteminSpawnausTodennakoisyys > Random.Range(0f, 1f)){
+					itemienSpawnaus [y].Add (true);
+				}
+				else{
+					itemienSpawnaus [y].Add (false);
+				}
 			}
 		}
 		
@@ -181,7 +197,7 @@ public class LuoLabyrintti : MonoBehaviour {
 		//Instantiate (kartta, new Vector3(ukko.transform.position.x, ukko.transform.position.y, 0), Quaternion.identity);
 		Instantiate (loydaLoppu, Vector3.zero, Quaternion.identity);
 		for (int i = 0; i < silmienSpawnausMaara; i++){
-			Instantiate (hirviot[Random.Range(0, hirviot.Length - 1)], new Vector3(Random.Range(0, labyrintinKoko) * 10 + 5, Random.Range(0, labyrintinKoko) * 10 + 5, 2.5f), Quaternion.identity);
+			Instantiate (hirviot[Random.Range(0, hirviot.Length)], new Vector3(Random.Range(0, labyrintinKoko) * 10 + 5, Random.Range(0, labyrintinKoko) * 10 + 5, 2.5f), Quaternion.identity);
 		}
 	}
 	
@@ -197,6 +213,10 @@ public class LuoLabyrintti : MonoBehaviour {
 					foreach(int dataArvo in sisaData){
 						labyrintinPalaset [ukonY - 2 + iy] [ukonX - 2 + ix].transform.Find ("MuuriPalikka" + dataPaikka.ToString()).gameObject.SetActive (dataArvo == 1 ? true : false);
 						labyrintinPalaset [ukonY - 2 + iy] [ukonX - 2 + ix].transform.Find ("PorttiPalikka" + dataPaikka.ToString()).gameObject.SetActive (dataArvo == 2 ? true : false);
+						if (itemienSpawnaus [ukonY - 2 + iy] [ukonX - 2 + ix]) {
+							itemienSpawnaus [ukonY - 2 + iy] [ukonX - 2 + ix] = false;
+							Instantiate (spawnattavatItemit[Random.Range(0, spawnattavatItemit.Length)], new Vector3((ukonX - 2 + ix) * 10 + Random.Range(3f, 7f), (ukonY - 2 + iy) * 10 + Random.Range(3f, 7f), 4), Quaternion.Euler(0, 0, Random.Range(0, 360f)));
+						}
 						dataPaikka += 1;
 					}
 					dataPaikka = 0;
@@ -221,91 +241,6 @@ public class LuoLabyrintti : MonoBehaviour {
 				}
 			}
 		}
-		//mustat laatikot
-		/*for (int x = 0; x < 5; x++) {
-			for (int y = 0; y < 5; y++){
-				if (ukonX - 2 + x >= 0 && ukonX - 2 + x < labyrintinKoko && ukonY - 2 + y >= 0 && ukonY - 2 + y < labyrintinKoko && (y - 2 != 0 || x - 2 != 0)) {
-					labyrintinPalaset [ukonY - 2 + y] [ukonX - 2 + x].transform.Find ("MustaPalikka").gameObject.SetActive (true);
-				}
-			}
-		}
-
-		if (ukonX + 1 < labyrintinKoko){
-			Collider2D mihinOsutaan = Physics2D.Raycast (LabyrintinPalanKeskiPaikka(ukonX + 1, ukonY), Vector2.left, 10f, LayerMask.GetMask("Muuri")).collider;
-			if (mihinOsutaan != null) {
-				labyrintinPalaset [ukonY] [ukonX + 1].transform.Find ("MustaPalikka").gameObject.SetActive (true);
-			} else {
-				labyrintinPalaset [ukonY] [ukonX + 1].transform.Find ("MustaPalikka").gameObject.SetActive (false);
-				}
-		}
-		if (ukonY + 1 < labyrintinKoko){
-			Collider2D mihinOsutaan = Physics2D.Raycast (LabyrintinPalanKeskiPaikka(ukonX, ukonY + 1), Vector2.down, 10f, LayerMask.GetMask("Muuri")).collider;
-			if (mihinOsutaan != null) {
-				labyrintinPalaset [ukonY + 1] [ukonX].transform.Find ("MustaPalikka").gameObject.SetActive (true);
-			} else {
-				labyrintinPalaset [ukonY + 1] [ukonX].transform.Find ("MustaPalikka").gameObject.SetActive (false);
-			}
-		}
-		if (ukonX - 1 >= 0){
-			Collider2D mihinOsutaan = Physics2D.Raycast (LabyrintinPalanKeskiPaikka(ukonX - 1, ukonY), Vector2.right, 10f, LayerMask.GetMask("Muuri")).collider;
-			if (mihinOsutaan != null) {
-				labyrintinPalaset [ukonY] [ukonX - 1].transform.Find ("MustaPalikka").gameObject.SetActive (true);
-			} else {
-				labyrintinPalaset [ukonY] [ukonX - 1].transform.Find ("MustaPalikka").gameObject.SetActive (false);
-			}
-		}
-		if (ukonY - 1 >= 0){
-			Collider2D mihinOsutaan = Physics2D.Raycast (LabyrintinPalanKeskiPaikka(ukonX, ukonY - 1), Vector2.up, 10f, LayerMask.GetMask("Muuri")).collider;
-			if (mihinOsutaan != null) {
-				labyrintinPalaset [ukonY - 1] [ukonX].transform.Find ("MustaPalikka").gameObject.SetActive (true);
-			} else {
-				labyrintinPalaset [ukonY - 1] [ukonX].transform.Find ("MustaPalikka").gameObject.SetActive (false);
-			}
-		}
-		if (ukonY + 1 < labyrintinKoko && ukonX + 1 < labyrintinKoko){
-			Collider2D mihinOsutaanVas = Physics2D.Raycast (LabyrintinPalanKeskiPaikka(ukonX + 1, ukonY + 1), Vector2.left, 10f, LayerMask.GetMask("Muuri")).collider;
-			Collider2D mihinOsutaanVasAlas = Physics2D.Raycast (LabyrintinPalanKeskiPaikka(ukonX, ukonY + 1), Vector2.down, 10f, LayerMask.GetMask("Muuri")).collider;
-			Collider2D mihinOsutaanAlas = Physics2D.Raycast (LabyrintinPalanKeskiPaikka(ukonX + 1, ukonY + 1), Vector2.down, 10f, LayerMask.GetMask("Muuri")).collider;
-			Collider2D mihinOsutaanAlasVas = Physics2D.Raycast (LabyrintinPalanKeskiPaikka(ukonX + 1, ukonY), Vector2.left, 10f, LayerMask.GetMask("Muuri")).collider;
-			if ((mihinOsutaanVas != null || mihinOsutaanVasAlas  != null) && (mihinOsutaanAlas != null || mihinOsutaanAlasVas != null)) {
-				labyrintinPalaset [ukonY + 1] [ukonX + 1].transform.Find ("MustaPalikka").gameObject.SetActive (true);
-			} else {
-				labyrintinPalaset [ukonY + 1] [ukonX + 1].transform.Find ("MustaPalikka").gameObject.SetActive (false);
-			}
-		}
-		if (ukonY + 1 < labyrintinKoko && ukonX - 1 >= 0){
-			Collider2D mihinOsutaanOik = Physics2D.Raycast (LabyrintinPalanKeskiPaikka(ukonX - 1, ukonY + 1), Vector2.right, 10f, LayerMask.GetMask("Muuri")).collider;
-			Collider2D mihinOsutaanOikAlas = Physics2D.Raycast (LabyrintinPalanKeskiPaikka(ukonX, ukonY + 1), Vector2.down, 10f, LayerMask.GetMask("Muuri")).collider;
-			Collider2D mihinOsutaanAlas = Physics2D.Raycast (LabyrintinPalanKeskiPaikka(ukonX - 1, ukonY + 1), Vector2.down, 10f, LayerMask.GetMask("Muuri")).collider;
-			Collider2D mihinOsutaanAlasVas = Physics2D.Raycast (LabyrintinPalanKeskiPaikka(ukonX - 1, ukonY), Vector2.right, 10f, LayerMask.GetMask("Muuri")).collider;
-			if ((mihinOsutaanOik != null || mihinOsutaanOikAlas  != null) && (mihinOsutaanAlas != null || mihinOsutaanAlasVas != null)) {
-				labyrintinPalaset [ukonY + 1] [ukonX - 1].transform.Find ("MustaPalikka").gameObject.SetActive (true);
-			} else {
-				labyrintinPalaset [ukonY + 1] [ukonX - 1].transform.Find ("MustaPalikka").gameObject.SetActive (false);
-			}
-		}
-		if (ukonY - 1 >= 0 && ukonX - 1 >= 0){
-			Collider2D mihinOsutaanOik = Physics2D.Raycast (LabyrintinPalanKeskiPaikka(ukonX - 1, ukonY - 1), Vector2.right, 10f, LayerMask.GetMask("Muuri")).collider;
-			Collider2D mihinOsutaanOikYlos = Physics2D.Raycast (LabyrintinPalanKeskiPaikka(ukonX, ukonY - 1), Vector2.up, 10f, LayerMask.GetMask("Muuri")).collider;
-			Collider2D mihinOsutaanYlos = Physics2D.Raycast (LabyrintinPalanKeskiPaikka(ukonX - 1, ukonY - 1), Vector2.up, 10f, LayerMask.GetMask("Muuri")).collider;
-			Collider2D mihinOsutaanYlosOik = Physics2D.Raycast (LabyrintinPalanKeskiPaikka(ukonX - 1, ukonY), Vector2.right, 10f, LayerMask.GetMask("Muuri")).collider;
-			if ((mihinOsutaanOik != null || mihinOsutaanOikYlos  != null) && (mihinOsutaanYlos != null || mihinOsutaanYlosOik != null)) {
-				labyrintinPalaset [ukonY - 1] [ukonX - 1].transform.Find ("MustaPalikka").gameObject.SetActive (true);
-			} else {
-				labyrintinPalaset [ukonY - 1] [ukonX - 1].transform.Find ("MustaPalikka").gameObject.SetActive (false);
-			}
-		}
-		if (ukonY - 1 >= 0 && ukonX + 1 < labyrintinKoko){
-			Collider2D mihinOsutaanVas = Physics2D.Raycast (LabyrintinPalanKeskiPaikka(ukonX + 1, ukonY - 1), Vector2.left, 10f, LayerMask.GetMask("Muuri")).collider;
-			Collider2D mihinOsutaanVasYlos = Physics2D.Raycast (LabyrintinPalanKeskiPaikka(ukonX, ukonY - 1), Vector2.up, 10f, LayerMask.GetMask("Muuri")).collider;
-			Collider2D mihinOsutaanYlos = Physics2D.Raycast (LabyrintinPalanKeskiPaikka(ukonX + 1, ukonY - 1), Vector2.up, 10f, LayerMask.GetMask("Muuri")).collider;
-			Collider2D mihinOsutaanYlosVas = Physics2D.Raycast (LabyrintinPalanKeskiPaikka(ukonX + 1, ukonY), Vector2.left, 10f, LayerMask.GetMask("Muuri")).collider;
-			if ((mihinOsutaanVas != null || mihinOsutaanVasYlos  != null) && (mihinOsutaanYlos != null || mihinOsutaanYlosVas != null)) {
-				labyrintinPalaset [ukonY - 1] [ukonX + 1].transform.Find ("MustaPalikka").gameObject.SetActive (true);
-			} else {
-				labyrintinPalaset [ukonY - 1] [ukonX + 1].transform.Find ("MustaPalikka").gameObject.SetActive (false);
-			}
-		}*/
 	}
 
 	int LuoOikeaPala () {

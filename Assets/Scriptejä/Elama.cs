@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Elama : MonoBehaviour {
 
 	public float HP;
+	public float maxHP;
 	public bool kuollut;
 	public GameObject dmgTeksti;
 	public GameObject veri;
@@ -24,6 +25,7 @@ public class Elama : MonoBehaviour {
 		rb = GetComponent<Rigidbody2D> ();
 		jaadytysAika = -1;
 		ollaankoJaadyksissa = false;
+		maxHP = HP;
 	}
 
 	void Update(){
@@ -56,8 +58,10 @@ public class Elama : MonoBehaviour {
 		aanet.Play ();
 		jaadytysAika = aika;
 		dmgTekstiAika = dmgTekstiOdotusAika;
-		dmgTeksti.transform.position = transform.position + new Vector3 (0, 1, 0);
-		vahinkoTeksti = vahinko.ToString ();
+		if(tag != "Ukko"){
+			dmgTeksti.transform.position = transform.position + new Vector3 (0, 1, -1);
+		}
+		vahinkoTeksti = Mathf.Round(vahinko).ToString ();
 		veri.GetComponent<ParticleSystem> ().Play ();
 		if (HP <= 0){
 			kuollut = true;

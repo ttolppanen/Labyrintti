@@ -5,7 +5,7 @@ using UnityEngine;
 public class UusiVarjo : MonoBehaviour {
 
 	GameObject ukko;
-	public float piirtoEtaisyys;
+	float piirtoEtaisyys;
 	public GameObject emo; //Vanha nimi, siis se missä on colliderit.
 	public bool pitaakoTehdaVarjot = true;
 	Material materiaali;
@@ -24,9 +24,14 @@ public class UusiVarjo : MonoBehaviour {
 		rendereri = GetComponent<Renderer>();
 		materiaali = rendereri.material;
 		piirtoEtaisyys = 13;
+		transform.rotation = Quaternion.Euler (0, 0, 0);
 	}
 
 	void Update () {
+		if(emo == null){
+			Destroy (gameObject);
+			return;
+		}
 		if((ukko.transform.position - transform.position).magnitude > piirtoEtaisyys){
 			materiaali.SetInt ("_TehdaankoVarjot", 0);
 			return;

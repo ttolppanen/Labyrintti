@@ -37,6 +37,7 @@ GameObject:
   - component: {fileID: 4395519255553286}
   - component: {fileID: 212796902314552994}
   - component: {fileID: 61478667821682706}
+  - component: {fileID: 114250585963976034}
   m_Layer: 0
   m_Name: Avain
   m_TagString: Avain
@@ -132,6 +133,20 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114250585963976034
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1677451524179242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08122cfe0752cbe4fb86ee7aff66461c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  emo: {fileID: 1677451524179242}
+  pitaakoTehdaVarjot: 0
+  varjonReuna: {fileID: 0}
 --- !u!212 &212796902314552994
 SpriteRenderer:
   m_ObjectHideFlags: 1

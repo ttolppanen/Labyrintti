@@ -11,10 +11,10 @@ public class MiekkaScripti : MonoBehaviour {
 
 	void Awake(){
 		om = GetComponent<EsineenOminaisuudet> ();
-		om.nimi = "Miekka";
-		vahinko = vahinko + Random.Range (0, 5);
-		om.vahinko = vahinko.ToString ();
-		om.kuvaus = "Hieno miekka millä voi vaikka huitoa.";
+		om.nimi = "Sword";
+		vahinko = vahinko + Random.Range (0, 30);
+		om.vahinko = "Damage: " + vahinko.ToString ();
+		om.kuvaus = "Nice sword that you can use to swing at stuff.";
 	}
 
 	void OnTriggerEnter2D(Collider2D vihollinen){

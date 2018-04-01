@@ -15,7 +15,7 @@ public class TuliPallo : MonoBehaviour {
 	}
 
 	void Update () {
-		if (Input.GetMouseButtonDown(1) && aika > castAika && manaScripti.mana > manaMaksu){
+		if (Input.GetMouseButtonDown(1) && aika > castAika && manaScripti.mana > manaMaksu && !Input.GetKey(KeyCode.Tab)){
 			Instantiate (tuliPallo, transform.position, Quaternion.identity);
 			aika = 0;
 			manaScripti.mana -= manaMaksu;

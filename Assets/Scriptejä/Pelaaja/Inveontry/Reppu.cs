@@ -22,7 +22,7 @@ public class Reppu : MonoBehaviour {
 		kuvat.Add (kuvat3);
 		kuvat.Add (kuvat4);
 		kuvat.Add (kuvat5);
-		reppu [4, 2] = kasi.transform.GetChild (0).gameObject;
+		//reppu [4, 2] = kasi.transform.GetChild (0).gameObject;
 	}
 
 	void Update () {
@@ -46,7 +46,6 @@ public class Reppu : MonoBehaviour {
 			aseKateen.transform.position = kasi.transform.position;
 			aseKateen.GetComponent<MiekkaScripti> ().vahinko = reppu [4, 2].GetComponent<MiekkaScripti> ().vahinko;
 		}*/
-		Debug.Log (esineKadessa);
 		if(reppu[4, 2] == null && esineKadessa != null){
 			esineKadessa.transform.position = new Vector3(-10, -10, 0);
 			esineKadessa.transform.parent = null;

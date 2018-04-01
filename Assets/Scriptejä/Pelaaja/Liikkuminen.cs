@@ -27,6 +27,9 @@ public class Liikkuminen : MonoBehaviour {
 		if (Input.GetKeyUp (KeyCode.Tab)) {
 			inventory.SetActive (false);
 		}
+		if(Input.GetKey(KeyCode.Tab)){
+			return;
+		}
 		if (Input.GetKeyDown ("r")) {
 			Application.LoadLevel (Application.loadedLevel);
 		}
@@ -62,6 +65,9 @@ public class Liikkuminen : MonoBehaviour {
 		if (GetComponent<Elama>().HP <= 0){
 			Scene scene = SceneManager.GetActiveScene(); 
 			SceneManager.LoadScene(scene.name);
+		}
+		if(Input.GetKey(KeyCode.Tab)){
+			return;
 		}
 		if (Input.GetKey("w") && maxNopeus > nopeusY){
 			rb.AddForce (Vector2.up * liikkumisKiihtyvyys);

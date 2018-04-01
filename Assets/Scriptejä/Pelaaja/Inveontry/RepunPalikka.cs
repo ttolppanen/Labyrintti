@@ -72,6 +72,10 @@ public class RepunPalikka : MonoBehaviour {
 			tekstiPalikkaOnLuotu = false;
 			Destroy (tekstiPalikka);
 		}
+		//Esineiden käyttö
+		if(ollaankoSisalla() && Input.GetMouseButtonDown(1) && esineReppu [int.Parse (gameObject.name.Substring (0, 1)), int.Parse (gameObject.name.Substring (1, 1))].GetComponent<EsineenOminaisuudet>().onkoKaytettava){
+			esineReppu [int.Parse (gameObject.name.Substring (0, 1)), int.Parse (gameObject.name.Substring (1, 1))].SendMessage ("kaytaEsine");
+		}
 	}
 
 	bool ollaankoSisalla(){
