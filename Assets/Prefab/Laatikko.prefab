@@ -77,6 +77,7 @@ GameObject:
   - component: {fileID: 223773618199389182}
   - component: {fileID: 114877476967054308}
   - component: {fileID: 114314866241119298}
+  - component: {fileID: 114732839264440042}
   m_Layer: 2
   m_Name: DMGteksti
   m_TagString: Untagged
@@ -375,6 +376,17 @@ MonoBehaviour:
   osumisAani: {fileID: 8300000, guid: 664f107c825320440b4b75df7ffe32a4, type: 3}
   ollaankoJaadyksissa: 0
   dmgTekstiOdotusAika: 3
+--- !u!114 &114732839264440042
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1217202894150978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c49144d302947b40b92179252151cf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114838289172586364
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -386,7 +398,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08122cfe0752cbe4fb86ee7aff66461c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  piirtoEtaisyys: 0
   emo: {fileID: 1205608352571016}
   pitaakoTehdaVarjot: 1
   varjonReuna: {fileID: 1875146018251318}

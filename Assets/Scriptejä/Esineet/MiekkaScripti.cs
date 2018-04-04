@@ -12,7 +12,7 @@ public class MiekkaScripti : MonoBehaviour {
 	void Awake(){
 		om = GetComponent<EsineenOminaisuudet> ();
 		om.nimi = "Sword";
-		vahinko = vahinko + Random.Range (0, 30);
+		vahinko = vahinko + Random.Range (0, 60);
 		om.vahinko = "Damage: " + vahinko.ToString ();
 		om.kuvaus = "Nice sword that you can use to swing at stuff.";
 	}

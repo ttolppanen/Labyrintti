@@ -48,9 +48,16 @@ public class RepunPalikka : MonoBehaviour {
 					string uusiIndeksi = pudotusPaikka.name.Substring(0, 2);
 					string tamaIndeksi = gameObject.name.Substring(0, 2);
 					GameObject uusiItemi = esineReppu [int.Parse(uusiIndeksi.Substring (0, 1)), int.Parse(uusiIndeksi.Substring (1, 1))];
-					esineReppu [int.Parse (uusiIndeksi.Substring (0, 1)), int.Parse (uusiIndeksi.Substring (1, 1))] = esineReppu [int.Parse (tamaIndeksi.Substring (0, 1)), int.Parse (tamaIndeksi.Substring (1, 1))];
-					esineReppu [int.Parse (tamaIndeksi.Substring (0, 1)), int.Parse (tamaIndeksi.Substring (1, 1))] = uusiItemi;
-					loytyko = true;
+					if(int.Parse (uusiIndeksi.Substring (0, 1)) == 4 &&  int.Parse (uusiIndeksi.Substring (1, 1)) == 2 && !esineReppu [int.Parse (tamaIndeksi.Substring (0, 1)), int.Parse (tamaIndeksi.Substring (1, 1))].GetComponent<EsineenOminaisuudet>().onkoAse){ // VAIN ASE MENE KÄTEEN
+						break;
+					}
+					else if(int.Parse (uusiIndeksi.Substring (0, 1)) == 4 &&  int.Parse (uusiIndeksi.Substring (1, 1)) != 2 && !esineReppu [int.Parse (tamaIndeksi.Substring (0, 1)), int.Parse (tamaIndeksi.Substring (1, 1))].GetComponent<EsineenOminaisuudet>().onkoPaalleLaitettava){ // VAIN EQUIPMENT PÄÄLLE
+						break;
+					}
+					else{
+						esineReppu [int.Parse (uusiIndeksi.Substring (0, 1)), int.Parse (uusiIndeksi.Substring (1, 1))] = esineReppu [int.Parse (tamaIndeksi.Substring (0, 1)), int.Parse (tamaIndeksi.Substring (1, 1))];
+						esineReppu [int.Parse (tamaIndeksi.Substring (0, 1)), int.Parse (tamaIndeksi.Substring (1, 1))] = uusiItemi;
+					}loytyko = true;
 					rOm.onkoKannossa = false;
 					olenKannossa = false;
 					break;
