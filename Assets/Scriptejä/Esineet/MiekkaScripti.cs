@@ -14,6 +14,7 @@ public class MiekkaScripti : MonoBehaviour {
 		om.nimi = "Sword";
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		vahinko = vahinko + Random.Range (0, 60);
 <<<<<<< HEAD
 		om.kuvaus = "Damage: " + vahinko.ToString () + "\n" + "Nice sword that you can use to swing at stuff.";
@@ -21,6 +22,11 @@ public class MiekkaScripti : MonoBehaviour {
 		om.vahinko = "Damage: " + vahinko.ToString ();
 		om.kuvaus = "Nice sword that you can use to swing at stuff.";
 >>>>>>> f4a311b71bf15d25b89f13debbab2e40fc84e57b
+=======
+		vahinko = vahinko + Random.Range (0, 30);
+		om.vahinko = "Damage: " + vahinko.ToString ();
+		om.kuvaus = "Nice sword that you can use to swing at stuff.";
+>>>>>>> parent of 36ff6ca... Maamerkit
 =======
 		vahinko = vahinko + Random.Range (0, 30);
 		om.vahinko = "Damage: " + vahinko.ToString ();
