@@ -45,11 +45,46 @@ public class RepunPalikka : MonoBehaviour {
 				if(hit.transform.tag == "RepunPalikka" && hit.transform != transform){
 					siirraKuvaTakaisin = true;
 					Transform pudotusPaikka = hit.transform;
-					string uusiIndeksi = pudotusPaikka.name.Substring(0, 2);
-					string tamaIndeksi = gameObject.name.Substring(0, 2);
-					GameObject uusiItemi = esineReppu [int.Parse(uusiIndeksi.Substring (0, 1)), int.Parse(uusiIndeksi.Substring (1, 1))];
-					esineReppu [int.Parse (uusiIndeksi.Substring (0, 1)), int.Parse (uusiIndeksi.Substring (1, 1))] = esineReppu [int.Parse (tamaIndeksi.Substring (0, 1)), int.Parse (tamaIndeksi.Substring (1, 1))];
-					esineReppu [int.Parse (tamaIndeksi.Substring (0, 1)), int.Parse (tamaIndeksi.Substring (1, 1))] = uusiItemi;
+					int[] uudetIndeksit = new int[]{ int.Parse(pudotusPaikka.name.Substring (0, 1)), int.Parse(pudotusPaikka.name.Substring (1, 1)) };
+					int[] tamanIndeksit = new int[]{ int.Parse(gameObject.name.Substring (0, 1)), int.Parse(gameObject.name.Substring (1, 1)) };
+					GameObject uusiItemi = esineReppu [uudetIndeksit[0], uudetIndeksit[1]];
+					EsineenOminaisuudet tamaItemiOm = (esineReppu [tamanIndeksit[0], tamanIndeksit[1]] != null) ? esineReppu [tamanIndeksit[0], tamanIndeksit[1]].GetComponent<EsineenOminaisuudet> () : null;
+					EsineenOminaisuudet uusiItemiOm = (uusiItemi != null) ? uusiItemi.GetComponent<EsineenOminaisuudet> () : null;
+
+					//Minne siirretään tarkistetaan
+					if (uudetIndeksit[0] == 4 && tamaItemiOm != null){
+						if(uudetIndeksit[1] == 2 && !tamaItemiOm.onkoAse){
+							break;
+						}
+						if(uudetIndeksit[1] == 0 && !tamaItemiOm.onkoKypara){
+							break;
+						}
+						if(uudetIndeksit[1] == 1 && !tamaItemiOm.onkoHaarniska){
+							break;
+						}
+						if(uudetIndeksit[1] == 3 && !tamaItemiOm.onkoHousut){
+							break;
+						}
+					}
+
+					//Mistä siirretään tarkistetaan
+					if (tamanIndeksit[0] == 4 && uusiItemiOm != null){
+						if(tamanIndeksit[1] == 2 && !uusiItemiOm.onkoAse){
+							break;
+						}
+						if(tamanIndeksit[1] == 0 && !uusiItemiOm.onkoKypara){
+							break;
+						}
+						if(tamanIndeksit[1] == 1 && !uusiItemiOm.onkoHaarniska){
+							break;
+						}
+						if(tamanIndeksit[1] == 3 && !uusiItemiOm.onkoHousut){
+							break;
+						}
+					}
+						
+					esineReppu [uudetIndeksit[0], uudetIndeksit[1]] = esineReppu [tamanIndeksit[0], tamanIndeksit[1]];
+					esineReppu [tamanIndeksit[0], tamanIndeksit[1]] = uusiItemi;
 					loytyko = true;
 					rOm.onkoKannossa = false;
 					olenKannossa = false;

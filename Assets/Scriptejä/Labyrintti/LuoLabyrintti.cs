@@ -6,6 +6,9 @@ public class LuoLabyrintti : MonoBehaviour {
 
 	public float iteminSpawnausTodennakoisyys;
 	public GameObject[] spawnattavatItemit = new GameObject[1];
+	public float maaMerkinSpawnausTodennakoisyys;
+	public Sprite[] maaMerkkienSpritet = new Sprite[3]; //0 on ympyrä, 1 neliä, 2 kolmio
+	public Material[] maaMerkkienMateriaalit = new Material[3]; //0 on ympyrä, 1 neliä, 2 kolmio
 
 	public float tnKaksiPalaa;
 	public float tnKolmePalaa;
@@ -25,6 +28,7 @@ public class LuoLabyrintti : MonoBehaviour {
 	List<List<int>> tarkistettavatPisteet = new List<List<int>>();
 	List<List<int>> loydetaanTarkistettavatPisteet = new List<List<int>>();
 	List<List<bool>> itemienSpawnaus = new List<List<bool>>();
+	public List<List<int>> maaMerkit = new List<List<int>>(); //0 ei mitään, 1 ympyrä, 2 neliö, 3 kolmio
 
 
 	void Awake () {
@@ -61,6 +65,17 @@ public class LuoLabyrintti : MonoBehaviour {
 				}
 				else{
 					itemienSpawnaus [y].Add (false);
+				}
+			}
+		}
+		for (int y = 0; y < labyrintinKoko; y++) {
+			maaMerkit.Add (new List<int> ());
+			for (int x = 0; x < labyrintinKoko; x++) { 
+				if(maaMerkinSpawnausTodennakoisyys > Random.Range(0f, 1f)){
+					maaMerkit [y].Add (Random.Range(1, 4));
+				}
+				else{
+					maaMerkit [y].Add (0);
 				}
 			}
 		}
@@ -213,13 +228,29 @@ public class LuoLabyrintti : MonoBehaviour {
 					foreach(int dataArvo in sisaData){
 						labyrintinPalaset [ukonY - 2 + iy] [ukonX - 2 + ix].transform.Find ("MuuriPalikka" + dataPaikka.ToString()).gameObject.SetActive (dataArvo == 1 ? true : false);
 						labyrintinPalaset [ukonY - 2 + iy] [ukonX - 2 + ix].transform.Find ("PorttiPalikka" + dataPaikka.ToString()).gameObject.SetActive (dataArvo == 2 ? true : false);
-						if (itemienSpawnaus [ukonY - 2 + iy] [ukonX - 2 + ix]) {
-							itemienSpawnaus [ukonY - 2 + iy] [ukonX - 2 + ix] = false;
-							Instantiate (spawnattavatItemit[Random.Range(0, spawnattavatItemit.Length)], new Vector3((ukonX - 2 + ix) * 10 + Random.Range(3f, 7f), (ukonY - 2 + iy) * 10 + Random.Range(3f, 7f), 4), Quaternion.Euler(0, 0, Random.Range(0, 360f)));
-						}
 						dataPaikka += 1;
+
+					}
+					if (itemienSpawnaus [ukonY - 2 + iy] [ukonX - 2 + ix]) {
+						itemienSpawnaus [ukonY - 2 + iy] [ukonX - 2 + ix] = false;
+						Instantiate (spawnattavatItemit[Random.Range(0, spawnattavatItemit.Length)], new Vector3((ukonX - 2 + ix) * 10 + Random.Range(3f, 7f), (ukonY - 2 + iy) * 10 + Random.Range(3f, 7f), 4), Quaternion.Euler(0, 0, Random.Range(0, 360f)));
 					}
 					dataPaikka = 0;
+					int maaMerkki = maaMerkit [ukonY - 2 + iy] [ukonX - 2 + ix];
+					if(maaMerkki != 0){
+						GameObject itseMaa = labyrintinPalaset [ukonY - 2 + iy] [ukonX - 2 + ix].transform.Find ("Maa").gameObject;
+						if (maaMerkki == 1) {
+							itseMaa.GetComponent<SpriteRenderer> ().sprite = maaMerkkienSpritet [0];
+							itseMaa.GetComponent<Renderer> ().material = maaMerkkienMateriaalit [0];
+						} else if (maaMerkki == 2) {
+							itseMaa.GetComponent<SpriteRenderer> ().sprite = maaMerkkienSpritet [1];
+							itseMaa.GetComponent<Renderer> ().material = maaMerkkienMateriaalit [1];
+						} 
+						else {
+							itseMaa.GetComponent<SpriteRenderer> ().sprite = maaMerkkienSpritet [2];
+							itseMaa.GetComponent<Renderer> ().material = maaMerkkienMateriaalit [2];
+						}
+					}
 				}
 			}
 		}

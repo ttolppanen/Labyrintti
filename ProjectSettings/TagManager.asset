@@ -13,7 +13,9 @@ TagManager:
   - AseMaassa
   - Ammus
   - RepunPalikka
-  - "EsineetP\xE4\xE4ll\xE4"
+  - EsineMaassa
+  - "EsineP\xE4\xE4ll\xE4"
+  - Maa
   layers:
   - Default
   - TransparentFX

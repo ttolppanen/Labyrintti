@@ -202,7 +202,7 @@ GameObject:
   - component: {fileID: 212883024878257026}
   m_Layer: 0
   m_Name: Maa
-  m_TagString: Untagged
+  m_TagString: Maa
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1588,6 +1588,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89353b4ec1053444d8af87b7637268ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  avain: 
 --- !u!114 &114386077865736412
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1641,6 +1642,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89353b4ec1053444d8af87b7637268ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  avain: 
 --- !u!114 &114417672543990916
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1666,6 +1668,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89353b4ec1053444d8af87b7637268ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  avain: 
 --- !u!114 &114735720942777726
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1719,6 +1722,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89353b4ec1053444d8af87b7637268ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  avain: 
 --- !u!212 &212015287403191018
 SpriteRenderer:
   m_ObjectHideFlags: 1
