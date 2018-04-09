@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114031585454624232}
   m_Layer: 0
   m_Name: Potion
-  m_TagString: EsineMaassa
+  m_TagString: AseMaassa
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,10 +94,10 @@ MonoBehaviour:
   tekstiPalikka: {fileID: 1235643473062012, guid: f7de30f3db2d5164580d393203fdd653,
     type: 2}
   nimi: 
+  vahinko: 
   kuvaus: 
   onkoAse: 0
   onkoKaytettava: 1
-  onkoPaalleLaitettava: 0
 --- !u!212 &212097616195691480
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -107,7 +107,6 @@ SpriteRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -123,7 +122,6 @@ SpriteRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5

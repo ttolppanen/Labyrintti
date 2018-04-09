@@ -5,7 +5,7 @@ using System;
 
 public class PortinAvaus : MonoBehaviour {
 
-	public string avain; //Avain tulee paikan koordinaateista
+	string avain; //Avain tulee paikan koordinaateista
 	List<List<List<int>>> labyrintinData = new List<List<List<int>>>();
 
 	void Awake(){

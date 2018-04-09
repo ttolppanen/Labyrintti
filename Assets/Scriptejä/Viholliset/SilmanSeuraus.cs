@@ -68,7 +68,7 @@ public class SilmanSeuraus : MonoBehaviour {
 			}
 		}
 	}
-	void OnTriggerStay2D(Collider2D col){
+	void OnTriggerEnter2D(Collider2D col){
 		if (col != null && col.gameObject.tag == "Ukko" && !seurataan){
 			ukko = col.gameObject;
 			seurausSuunta = col.transform.position - transform.position;

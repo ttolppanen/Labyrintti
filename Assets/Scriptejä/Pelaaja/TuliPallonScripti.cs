@@ -22,7 +22,7 @@ public class TuliPallonScripti : MonoBehaviour {
 		rb.AddForce (suunta.normalized * idleVoima, ForceMode2D.Impulse);
 		aika = 0;
 	}
-	void FixedUpdate(){
+	void Update(){
 		aika += Time.deltaTime;
 		ukko.GetComponent<Mana> ().mana -= Time.deltaTime * mananVahentumisKerroin;
 		if (aika > castAika){

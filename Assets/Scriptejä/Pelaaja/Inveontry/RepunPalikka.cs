@@ -46,6 +46,7 @@ public class RepunPalikka : MonoBehaviour {
 					siirraKuvaTakaisin = true;
 					Transform pudotusPaikka = hit.transform;
 <<<<<<< HEAD:Assets/Scriptejä/Pelaaja/Inventory/RepunPalikka.cs
+<<<<<<< HEAD:Assets/Scriptejä/Pelaaja/Inventory/RepunPalikka.cs
 					int[] uudetIndeksit = new int[]{ int.Parse(pudotusPaikka.name.Substring (0, 1)), int.Parse(pudotusPaikka.name.Substring (1, 1)) };
 					int[] tamanIndeksit = new int[]{ int.Parse(gameObject.name.Substring (0, 1)), int.Parse(gameObject.name.Substring (1, 1)) };
 					GameObject uusiItemi = esineReppu [uudetIndeksit[0], uudetIndeksit[1]];
@@ -86,6 +87,13 @@ public class RepunPalikka : MonoBehaviour {
 						
 					esineReppu [uudetIndeksit[0], uudetIndeksit[1]] = esineReppu [tamanIndeksit[0], tamanIndeksit[1]];
 					esineReppu [tamanIndeksit[0], tamanIndeksit[1]] = uusiItemi;
+=======
+					string uusiIndeksi = pudotusPaikka.name.Substring(0, 2);
+					string tamaIndeksi = gameObject.name.Substring(0, 2);
+					GameObject uusiItemi = esineReppu [int.Parse(uusiIndeksi.Substring (0, 1)), int.Parse(uusiIndeksi.Substring (1, 1))];
+					esineReppu [int.Parse (uusiIndeksi.Substring (0, 1)), int.Parse (uusiIndeksi.Substring (1, 1))] = esineReppu [int.Parse (tamaIndeksi.Substring (0, 1)), int.Parse (tamaIndeksi.Substring (1, 1))];
+					esineReppu [int.Parse (tamaIndeksi.Substring (0, 1)), int.Parse (tamaIndeksi.Substring (1, 1))] = uusiItemi;
+>>>>>>> parent of 36ff6ca... Maamerkit:Assets/Scriptejä/Pelaaja/Inveontry/RepunPalikka.cs
 					loytyko = true;
 =======
 					string uusiIndeksi = pudotusPaikka.name.Substring(0, 2);

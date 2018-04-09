@@ -61,24 +61,14 @@ public class Reppu : MonoBehaviour {
 			esineKadessa.transform.position = kasi.transform.position;
 			esineKadessa.transform.rotation = kasi.transform.rotation;
 		}
-		float kokoDef = 0;
-		for (int x = 0; x < 4; x++) {
-			if(x != 2 && reppu[4, x] != null){
-				kokoDef += reppu [4, x].GetComponent<Varustus> ().defence;
-			}
-		}
-		if(kokoDef > 100){
-			kokoDef = 100;
-		}
-		GetComponent<OlionOminaisuudet> ().defence = kokoDef;
 	}
 
 	void OnTriggerEnter2D(Collider2D coll){
-		if (coll != null && coll.tag == "EsineMaassa"){
+		if (coll != null && coll.tag == "AseMaassa"){
 			for(int y = 0; y < 4; y++){
 				for (int x = 0; x < 4; x++) {
 					if (reppu [y, x] == null) {
-						coll.gameObject.tag = "EsinePäällä";
+						coll.gameObject.tag = "AseKadessa";
 						coll.transform.position = new Vector3 (-10, -10, 0);
 						reppu [y, x] = coll.gameObject;
 						coll.transform.parent = kuvat [y] [x].transform;

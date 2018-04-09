@@ -53,8 +53,7 @@ public class Elama : MonoBehaviour {
 	}
 
 	public void OtaVahinkoa(float vahinko, float aika){
-		OlionOminaisuudet oliOm = GetComponent<OlionOminaisuudet> ();
-		HP -= Mathf.CeilToInt(vahinko * (1 - oliOm.defence / 100)) ;
+		HP -= vahinko;
 		aanet.clip = osumisAani;
 		aanet.Play ();
 		jaadytysAika = aika;
