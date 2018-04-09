@@ -4018,7 +4018,11 @@ Prefab:
     - target: {fileID: 114954308706304924, guid: 592125c7bf1fd1b41991f9c6bc7888cb,
         type: 2}
       propertyPath: silmienSpawnausMaara
+<<<<<<< HEAD
       value: 10
+=======
+      value: 20
+>>>>>>> f4a311b71bf15d25b89f13debbab2e40fc84e57b
       objectReference: {fileID: 0}
     - target: {fileID: 114954308706304924, guid: 592125c7bf1fd1b41991f9c6bc7888cb,
         type: 2}

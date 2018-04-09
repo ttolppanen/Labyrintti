@@ -12,9 +12,12 @@ public class EsineenOminaisuudet : MonoBehaviour {
 	public bool onkoAse;
 	public bool onkoKaytettava;
 	public bool onkoPaalleLaitettava;
+<<<<<<< HEAD
 	public bool onkoKypara;
 	public bool onkoHaarniska;
 	public bool onkoHousut;
+=======
+>>>>>>> f4a311b71bf15d25b89f13debbab2e40fc84e57b
 
 	public GameObject luoTekstiPalikka(Vector3 paikka, Transform emo){
 		GameObject palikka = Instantiate (tekstiPalikka, emo);
