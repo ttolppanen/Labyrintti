@@ -13,6 +13,7 @@ public class EsineenOminaisuudet : MonoBehaviour {
 	public bool onkoAse;
 	public bool onkoKaytettava;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	public bool onkoPaalleLaitettava;
 <<<<<<< HEAD
 	public bool onkoKypara;
@@ -20,6 +21,8 @@ public class EsineenOminaisuudet : MonoBehaviour {
 	public bool onkoHousut;
 =======
 >>>>>>> f4a311b71bf15d25b89f13debbab2e40fc84e57b
+=======
+>>>>>>> parent of 36ff6ca... Maamerkit
 =======
 >>>>>>> parent of 36ff6ca... Maamerkit
 

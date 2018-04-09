@@ -3870,10 +3870,14 @@ Prefab:
       propertyPath: silmienSpawnausMaara
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: 10
 =======
       value: 20
 >>>>>>> f4a311b71bf15d25b89f13debbab2e40fc84e57b
+=======
+      value: 15
+>>>>>>> parent of 36ff6ca... Maamerkit
 =======
       value: 15
 >>>>>>> parent of 36ff6ca... Maamerkit
