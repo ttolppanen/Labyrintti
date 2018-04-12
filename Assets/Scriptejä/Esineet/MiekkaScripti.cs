@@ -7,47 +7,20 @@ public class MiekkaScripti : MonoBehaviour {
 	public float vahinko; 
 	public float jaadytysAika;
 
+	GameObject ukko;
 	EsineenOminaisuudet om;
 
 	void Awake(){
 		om = GetComponent<EsineenOminaisuudet> ();
 		om.nimi = "Sword";
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 		vahinko = vahinko + Random.Range (0, 60);
-<<<<<<< HEAD
 		om.kuvaus = "Damage: " + vahinko.ToString () + "\n" + "Nice sword that you can use to swing at stuff.";
-=======
-		om.vahinko = "Damage: " + vahinko.ToString ();
-		om.kuvaus = "Nice sword that you can use to swing at stuff.";
->>>>>>> f4a311b71bf15d25b89f13debbab2e40fc84e57b
-=======
-		vahinko = vahinko + Random.Range (0, 30);
-		om.vahinko = "Damage: " + vahinko.ToString ();
-		om.kuvaus = "Nice sword that you can use to swing at stuff.";
->>>>>>> parent of 36ff6ca... Maamerkit
-=======
-		vahinko = vahinko + Random.Range (0, 30);
-		om.vahinko = "Damage: " + vahinko.ToString ();
-		om.kuvaus = "Nice sword that you can use to swing at stuff.";
->>>>>>> parent of 36ff6ca... Maamerkit
-=======
-		vahinko = vahinko + Random.Range (0, 30);
-		om.vahinko = "Damage: " + vahinko.ToString ();
-		om.kuvaus = "Nice sword that you can use to swing at stuff.";
->>>>>>> parent of 36ff6ca... Maamerkit
-=======
-		vahinko = vahinko + Random.Range (0, 30);
-		om.vahinko = "Damage: " + vahinko.ToString ();
-		om.kuvaus = "Nice sword that you can use to swing at stuff.";
->>>>>>> parent of 36ff6ca... Maamerkit
+		ukko = GameObject.FindGameObjectWithTag ("Ukko");
 	}
 
 	void OnTriggerEnter2D(Collider2D vihollinen){
 		if (vihollinen.tag == "Vihollinen"){
-			vihollinen.gameObject.GetComponent<Elama> ().OtaVahinkoa (vahinko, jaadytysAika);
+			vihollinen.gameObject.GetComponent<Elama> ().OtaVahinkoa (vahinko * ukko.GetComponent<Levelit>().strenght, jaadytysAika);
 		}
 	}
 }

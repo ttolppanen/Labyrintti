@@ -12,11 +12,11 @@ public class HpBar : MonoBehaviour {
 	void Awake () {
 		ukko = GameObject.Find ("Ukko");
 		hpScripti = ukko.GetComponent<Elama>();
-		maxHp = hpScripti.HP;
 	}
 
 	void Update () {
 		hp = hpScripti.HP;
+		maxHp = hpScripti.maxHP;
 		transform.localScale = new Vector3 (hp / maxHp, 1, 1);
 	}
 }

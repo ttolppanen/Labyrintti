@@ -10,6 +10,7 @@ public class Elama : MonoBehaviour {
 	public bool kuollut;
 	public GameObject dmgTeksti;
 	public GameObject veri;
+	public GameObject ukko;
 	public AudioClip osumisAani;
 	public bool ollaankoJaadyksissa;
 	public float dmgTekstiOdotusAika;
@@ -53,7 +54,8 @@ public class Elama : MonoBehaviour {
 	}
 
 	public void OtaVahinkoa(float vahinko, float aika){
-		HP -= vahinko;
+		OlionOminaisuudet oliOm = GetComponent<OlionOminaisuudet> ();
+		HP -= Mathf.CeilToInt(vahinko * (1 - oliOm.defence / 100)) ;
 		aanet.clip = osumisAani;
 		aanet.Play ();
 		jaadytysAika = aika;
@@ -65,6 +67,7 @@ public class Elama : MonoBehaviour {
 		veri.GetComponent<ParticleSystem> ().Play ();
 		if (HP <= 0){
 			kuollut = true;
+			ukko.GetComponent<Levelit> ().experience += GetComponent<OlionOminaisuudet> ().expAnto;
 		}
 	}
 }

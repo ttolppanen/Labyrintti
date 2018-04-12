@@ -9,6 +9,7 @@ public class VihollistenLiikkuminen : MonoBehaviour {
 	Vector2 viimeTarkistusPiste;
 	Vector2 paikka;
 	Rigidbody2D rb;
+	float korjausSade;
 	public float kiihtyvyys;
 	public float maxNopeus;
 	public float tarkistusAlueenSade;
@@ -21,9 +22,10 @@ public class VihollistenLiikkuminen : MonoBehaviour {
 		menoSuunta = Vector2.zero;
 		rb = GetComponent<Rigidbody2D> ();
 		labScr = GameObject.Find ("Luo Labyrintti").GetComponent<LuoLabyrintti>();
+		korjausSade = Random.Range(0, 2f);
 	}
 
-	void Update () {
+	void FixedUpdate () {
 		if (gameObject.GetComponent<Elama>().kuollut){
 			gameObject.GetComponent<SpriteRenderer> ().sprite = kuollutSprite;
 			transform.Find ("SilmänNäköAlue").gameObject.SetActive(false);
@@ -58,17 +60,17 @@ public class VihollistenLiikkuminen : MonoBehaviour {
 		}
 		//Korjataan keskelle
 		if (Mathf.RoundToInt(menoSuunta.x) != 0) {
-			if (transform.position.y > y * 10 + 5){
+			if (transform.position.y > y * 10 + 5 - korjausSade){
 				rb.AddForce (Vector2.down * korjausVoima);
 			}
-			else if(transform.position.y < y * 10 + 5){
+			else if(transform.position.y < y * 10 + 5 + korjausSade){
 				rb.AddForce (Vector2.up * korjausVoima);
 			}
 		} else {
-			if (transform.position.x > x * 10 + 5){
+			if (transform.position.x > x * 10 + 5 - korjausSade){
 				rb.AddForce (Vector2.left * korjausVoima);
 			}
-			else if(transform.position.x < x * 10 + 5){
+			else if(transform.position.x < x * 10 + 5 + korjausSade){
 				rb.AddForce (Vector2.right * korjausVoima);
 			}
 		}

@@ -67,7 +67,7 @@
 					float v = (i.uv.y * suunta.x - ekaKulma.y * suunta.x + suunta.y * ekaKulma.x - suunta.y * i.uv.x) / (suunta.x * kulmienSuunta.y - suunta.y * kulmienSuunta.x);
 					float u = (ekaKulma.x + v * kulmienSuunta.x - i.uv.x) / suunta.x;
 					if (v >= 0 && u >= 0 && v <= 1 && u <= 1){
-						col = float4(0, 0, 0, 1);
+						col = float4(0, 0, 0, 0.95);
 					}
 				}
 				return col;
