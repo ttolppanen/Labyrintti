@@ -16,6 +16,8 @@ TagManager:
   - EsineMaassa
   - "EsineP\xE4\xE4ll\xE4"
   - Maa
+  - Pelaaja
+  - Kartta
   layers:
   - Default
   - TransparentFX

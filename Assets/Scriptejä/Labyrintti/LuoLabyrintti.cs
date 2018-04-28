@@ -20,7 +20,7 @@ public class LuoLabyrintti : MonoBehaviour {
 	public GameObject loydaLoppu;
 	public int labyrintinKoko;
 	public int silmienSpawnausMaara;
-	public GameObject ukko;
+	GameObject ukko;
 	public GameObject kartta;
 	public List<List<GameObject>> labyrintinPalaset = new List<List<GameObject>>();
 	public List<List<List<int>>> labyrintinData = new List<List<List<int>>>(); //0 = auki, 1 = muuri, 2 = portti
@@ -39,6 +39,8 @@ public class LuoLabyrintti : MonoBehaviour {
 				labyrintinPalaset[y].Add(Instantiate (labyrintinPala, new Vector3 (x * 10, y * 10, 0), Quaternion.identity));
 			}
 		}*/
+		ukko = GameObject.FindGameObjectWithTag ("Ukko");
+
 		for (int y = 0; y < labyrintinKoko; y++) {
 			labyrintinPalaset.Add (new List<GameObject>());
 			for (int x = 0; x < labyrintinKoko; x++) { 

@@ -15,10 +15,11 @@ public class Levelit : MonoBehaviour {
 	public int hp;
 
 	public float lvlUpRajaNosto;
-	float lvlUpRaja;
+	public float lvlUpRaja;
 
 	void Update(){
-		if(experience > lvlUpRaja){
+		if(experience >= lvlUpRaja){
+			level += 1;
 			experience -= lvlUpRaja;
 			lvlUpRaja += lvlUpRajaNosto;
 			lisaaStatseja ();
@@ -26,7 +27,11 @@ public class Levelit : MonoBehaviour {
 			ukko.GetComponent<Elama> ().HP = hp;
 		}
 	}
+
 	void lisaaStatseja(){
-		
+		strenght += Random.Range (1, 4);
+		speed += Random.Range (1, 4);
+		intelligence += Random.Range (1, 4);
+		hp += Random.Range (5, 25);
 	}
 }

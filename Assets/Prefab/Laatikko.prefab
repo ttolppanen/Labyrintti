@@ -354,6 +354,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defence: 1
+  expAnto: 0
 --- !u!114 &114314866241119298
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -469,6 +469,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defence: 1
+  expAnto: 75
 --- !u!114 &114198248044914190
 MonoBehaviour:
   m_ObjectHideFlags: 1

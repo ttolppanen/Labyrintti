@@ -10,7 +10,7 @@ public class Elama : MonoBehaviour {
 	public bool kuollut;
 	public GameObject dmgTeksti;
 	public GameObject veri;
-	public GameObject ukko;
+	GameObject ukko;
 	public AudioClip osumisAani;
 	public bool ollaankoJaadyksissa;
 	public float dmgTekstiOdotusAika;
@@ -27,6 +27,7 @@ public class Elama : MonoBehaviour {
 		jaadytysAika = -1;
 		ollaankoJaadyksissa = false;
 		maxHP = HP;
+		ukko = GameObject.FindGameObjectWithTag ("Ukko");
 	}
 
 	void Update(){

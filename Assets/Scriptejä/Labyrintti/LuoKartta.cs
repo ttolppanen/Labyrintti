@@ -15,7 +15,7 @@ public class LuoKartta : MonoBehaviour {
 	List<List<List<int>>> kartanData = new List<List<List<int>>>();
 	List<List<int>> maaMerkit = new List<List<int>> ();
 	int labyrintinKoko;
-	bool onkoKarttaLuotu = false;
+	public bool onkoKarttaLuotu = false;
 
 	void Update () {
 		if(!onkoKarttaLuotu && GameObject.Find ("Luo Labyrintti").GetComponent<LuoLabyrintti> ().labyrintinData != null){
