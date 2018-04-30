@@ -9,9 +9,9 @@ public class Varustus : MonoBehaviour {
 	EsineenOminaisuudet om;
 
 	void Awake(){
+		defence += Random.Range (0, 6);
 		om = GetComponent<EsineenOminaisuudet> ();
-		om.nimi = "Helmet";
-		om.kuvaus = "Defence: " + defence.ToString () + "\n" + "Nice helmet that you can use to put your head in.";
+		om.kuvaus = "Defence: " + defence + "\n" + om.kuvaus;
 	}
 		
 }

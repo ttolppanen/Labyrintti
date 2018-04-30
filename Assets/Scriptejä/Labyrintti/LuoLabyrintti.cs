@@ -225,7 +225,7 @@ public class LuoLabyrintti : MonoBehaviour {
 		for (int iy = 0; iy < 5; iy++) {
 			for (int ix = 0; ix < 5; ix++) { 
 				if ((ukonY - 2 + iy >= 0 && ukonY - 2 + iy < labyrintinKoko && ukonX - 2 + ix >= 0 && ukonX - 2 + ix < labyrintinKoko) && labyrintinPalaset[ukonY - 2 + iy][ukonX - 2 + ix].name == "tyhja"){
-					labyrintinPalaset[ukonY - 2 + iy][ukonX - 2 + ix] = Instantiate (labyrintinPala, new Vector3 ((ukonX - 2 + ix) * 10, (ukonY - 2 + iy) * 10, 1), Quaternion.identity);
+					labyrintinPalaset[ukonY - 2 + iy][ukonX - 2 + ix] = Instantiate (labyrintinPala, new Vector3 ((ukonX - 2 + ix) * 10, (ukonY - 2 + iy) * 10, 0), Quaternion.identity);
 					List<int> sisaData = labyrintinData [ukonY - 2 + iy] [ukonX - 2 + ix];
 					foreach(int dataArvo in sisaData){
 						labyrintinPalaset [ukonY - 2 + iy] [ukonX - 2 + ix].transform.Find ("MuuriPalikka" + dataPaikka.ToString()).gameObject.SetActive (dataArvo == 1 ? true : false);

@@ -9,21 +9,21 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1582614967597488}
+  m_RootGameObject: {fileID: 1856952833066576}
   m_IsPrefabParent: 1
---- !u!1 &1582614967597488
+--- !u!1 &1856952833066576
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4303669927938266}
-  - component: {fileID: 212964086624946490}
-  - component: {fileID: 61373319558493808}
-  - component: {fileID: 114334692001973844}
-  - component: {fileID: 114925460886384908}
-  - component: {fileID: 114338599829343296}
+  - component: {fileID: 4737709645748028}
+  - component: {fileID: 212656293871920012}
+  - component: {fileID: 61816838544098602}
+  - component: {fileID: 114052821677405814}
+  - component: {fileID: 114553767237465452}
+  - component: {fileID: 114481003449696890}
   m_Layer: 14
   m_Name: Miekka
   m_TagString: EsineMaassa
@@ -31,12 +31,12 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4303669927938266
+--- !u!4 &4737709645748028
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1582614967597488}
+  m_GameObject: {fileID: 1856952833066576}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 5.13, y: 6.79, z: 4}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -44,12 +44,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -10}
---- !u!61 &61373319558493808
+--- !u!61 &61816838544098602
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1582614967597488}
+  m_GameObject: {fileID: 1856952833066576}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -69,12 +69,12 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.20741044, y: 1.166366}
   m_EdgeRadius: 0
---- !u!114 &114334692001973844
+--- !u!114 &114052821677405814
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1582614967597488}
+  m_GameObject: {fileID: 1856952833066576}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f7037138cd758f044bc074121f88efe7, type: 3}
@@ -82,26 +82,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vahinko: 1
   jaadytysAika: 0
---- !u!114 &114338599829343296
+--- !u!114 &114481003449696890
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1582614967597488}
+  m_GameObject: {fileID: 1856952833066576}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 08122cfe0752cbe4fb86ee7aff66461c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  emo: {fileID: 1582614967597488}
+  emo: {fileID: 1856952833066576}
   pitaakoTehdaVarjot: 0
   varjonReuna: {fileID: 0}
---- !u!114 &114925460886384908
+--- !u!114 &114553767237465452
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1582614967597488}
+  m_GameObject: {fileID: 1856952833066576}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 661e8001e44a02f47ab33aacbe2714e2, type: 3}
@@ -114,16 +114,18 @@ MonoBehaviour:
   onkoAse: 1
   onkoKaytettava: 0
   onkoPaalleLaitettava: 0
---- !u!212 &212964086624946490
+  onkoKypara: 0
+  onkoHaarniska: 0
+  onkoHousut: 0
+--- !u!212 &212656293871920012
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1582614967597488}
+  m_GameObject: {fileID: 1856952833066576}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -139,7 +141,6 @@ SpriteRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
