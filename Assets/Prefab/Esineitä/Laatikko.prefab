@@ -344,7 +344,8 @@ MonoBehaviour:
   - {fileID: 1217435066121246, guid: 2e0e52f22ede1414881dc4a71cc7788f, type: 2}
   - {fileID: 1856952833066576, guid: ec8a4a98ca048fc4ca580b322b88e739, type: 2}
   - {fileID: 1830832826423162, guid: 95c96759bb4f8e544b395c136f5ad236, type: 2}
-  todennakoisyysSpawnata: 0.5
+  - {fileID: 1341921799620042, guid: b6a221c04f9dc3348a95e15a2de7fe79, type: 2}
+  todennakoisyysSpawnata: 0.8
 --- !u!114 &114087009201748714
 MonoBehaviour:
   m_ObjectHideFlags: 1

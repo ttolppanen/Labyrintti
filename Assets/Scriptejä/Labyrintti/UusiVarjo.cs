@@ -32,7 +32,7 @@ public class UusiVarjo : MonoBehaviour {
 			Destroy (gameObject);
 			return;
 		}
-		if((ukko.transform.position - transform.position).magnitude > piirtoEtaisyys){
+		if((ukko.transform.position - emo.transform.position).magnitude > piirtoEtaisyys){
 			materiaali.SetInt ("_TehdaankoVarjot", 0);
 			return;
 		}

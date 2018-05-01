@@ -105,6 +105,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4544712107664488}
+  - component: {fileID: 114380634819399790}
   m_Layer: 2
   m_Name: AmpuvaSilma (1)
   m_TagString: Untagged
@@ -485,6 +486,22 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &114380634819399790
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1473402224007172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc2d758228c39f444888c0ff2db650a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hallittavat:
+  - {fileID: 1669841369157194}
+  - {fileID: 1179264346554676}
+  - {fileID: 1115003759678278}
+  sammutusEtaisyys: 40
 --- !u!114 &114538588225655522
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -563,7 +580,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kiihtyvyys: 10
   maxNopeus: 10
-  tarkistusAlueenSade: 1
+  tarkistusAlueenSade: 1.5
   korjausVoima: 5
   jahti: 0
   kuollutSprite: {fileID: 21300000, guid: cdf1e397183ee36479996b28d7555042, type: 3}

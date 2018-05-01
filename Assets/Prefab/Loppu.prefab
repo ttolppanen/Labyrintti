@@ -9,47 +9,45 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1217435066121246}
+  m_RootGameObject: {fileID: 1451854506895116}
   m_IsPrefabParent: 1
---- !u!1 &1217435066121246
+--- !u!1 &1451854506895116
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4922423986660778}
-  - component: {fileID: 212792130779846366}
-  - component: {fileID: 61629779835139822}
-  - component: {fileID: 114733559144126158}
-  - component: {fileID: 114892259752456274}
-  - component: {fileID: 114162518757493978}
-  m_Layer: 0
-  m_Name: Haarniska
-  m_TagString: EsineMaassa
+  - component: {fileID: 4297608983840846}
+  - component: {fileID: 212297502775076418}
+  - component: {fileID: 61753622858637334}
+  - component: {fileID: 114274582299316972}
+  m_Layer: 10
+  m_Name: Loppu
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4922423986660778
+--- !u!4 &4297608983840846
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1217435066121246}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.131, y: 6.229, z: 4}
+  m_GameObject: {fileID: 1451854506895116}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 15, y: 15, z: 4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61629779835139822
+--- !u!61 &61753622858637334
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1217435066121246}
+  m_GameObject: {fileID: 1451854506895116}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -60,69 +58,32 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 0.64, y: 0.64}
+    newSize: {x: 0.64, y: 0.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.64, y: 0.64}
   m_EdgeRadius: 0
---- !u!114 &114162518757493978
+--- !u!114 &114274582299316972
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1217435066121246}
+  m_GameObject: {fileID: 1451854506895116}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08122cfe0752cbe4fb86ee7aff66461c, type: 3}
+  m_Script: {fileID: 11500000, guid: ab954cc3668cbf64a961668d5118de9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  emo: {fileID: 1217435066121246}
-  pitaakoTehdaVarjot: 0
-  varjonReuna: {fileID: 0}
---- !u!114 &114733559144126158
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1217435066121246}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a62f74684edc874fa362488672503c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  defence: 5
-  defenseRndVali: 10
---- !u!114 &114892259752456274
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1217435066121246}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 661e8001e44a02f47ab33aacbe2714e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tekstiPalikka: {fileID: 1235643473062012, guid: f7de30f3db2d5164580d393203fdd653,
-    type: 2}
-  nimi: Armor
-  kuvaus: Nice armor to put your body in
-  onkoAse: 0
-  onkoKaytettava: 0
-  onkoPaalleLaitettava: 1
-  onkoKypara: 0
-  onkoHaarniska: 1
-  onkoHousut: 0
---- !u!212 &212792130779846366
+--- !u!212 &212297502775076418
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1217435066121246}
+  m_GameObject: {fileID: 1451854506895116}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -130,7 +91,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 480a1e36b3d934740af1b57e730af6f3, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -148,13 +109,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c6bf9adbe855a424bb7231d6a50b5fd8, type: 3}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: 3d7351db6dc905f4ca7229895e99a516, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.64, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

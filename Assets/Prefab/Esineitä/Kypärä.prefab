@@ -81,6 +81,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defence: 5
+  defenseRndVali: 10
 --- !u!114 &114611047110959326
 MonoBehaviour:
   m_ObjectHideFlags: 1
