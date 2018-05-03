@@ -82,6 +82,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tekstiPalikka: {fileID: 1235643473062012, guid: f7de30f3db2d5164580d393203fdd653,
     type: 2}
+  pikkukuva: {fileID: 2800000, guid: 3f74f899eb943a94dbe96e4bb3961167, type: 3}
   nimi: 
   kuvaus: 
   onkoAse: 0

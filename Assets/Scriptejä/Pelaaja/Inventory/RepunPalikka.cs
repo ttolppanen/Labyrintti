@@ -91,10 +91,17 @@ public class RepunPalikka : MonoBehaviour {
 					break;
 				}
 			}
-			if(!loytyko){
+			if (!loytyko) {
 				minunKuva.transform.position = transform.position;
 				rOm.onkoKannossa = false;
 				olenKannossa = false;
+				if (osumat.Length == 0) {
+					GameObject esineRepussa = esineReppu [int.Parse (gameObject.name.Substring (0, 1)), int.Parse (gameObject.name.Substring (1, 1))];
+					esineRepussa.transform.position = new Vector3 (ukko.transform.position.x, ukko.transform.position.y, esineRepussa.transform.position.z) + new Vector3 (0, 2, 0);
+					esineRepussa.transform.parent = null;
+					esineRepussa.tag = "EsineMaassa";
+					esineReppu [int.Parse (gameObject.name.Substring (0, 1)), int.Parse (gameObject.name.Substring (1, 1))] = null;
+				}
 			}
 		}
 		//Teksti boxi

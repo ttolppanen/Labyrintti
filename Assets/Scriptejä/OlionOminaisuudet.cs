@@ -6,5 +6,4 @@ public class OlionOminaisuudet : MonoBehaviour {
 
 	public float defence;
 	public float expAnto;
-
 }

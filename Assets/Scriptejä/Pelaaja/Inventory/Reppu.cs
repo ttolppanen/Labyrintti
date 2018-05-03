@@ -30,22 +30,13 @@ public class Reppu : MonoBehaviour {
 		for(int y = 0; y < 5; y++){
 			for (int x = 0; x < 4; x++) {
 				if (reppu [y, x] != null) {
-					kuvat [y][x].GetComponent<RawImage> ().texture = reppu [y, x].GetComponent<SpriteRenderer> ().sprite.texture;
+					kuvat [y][x].GetComponent<RawImage> ().texture = reppu [y, x].GetComponent<EsineenOminaisuudet> ().pikkukuva;
 				} else {
 					kuvat [y][x].GetComponent<RawImage> ().texture = tyhjaKuva;
 				}
 			}
 		}
 		GameObject esineKadessa = kasi.transform.childCount > 0 ? kasi.transform.GetChild (0).gameObject : null;
-		/*if(reppu[4, 2] == null && esineKadessa != null){
-			Destroy (esineKadessa.gameObject);
-		} 
-		else if(reppu[4, 2] != esineKadessa){
-			Destroy (esineKadessa);
-			GameObject aseKateen = Instantiate(reppu [4, 2], kasi.transform);
-			aseKateen.transform.position = kasi.transform.position;
-			aseKateen.GetComponent<MiekkaScripti> ().vahinko = reppu [4, 2].GetComponent<MiekkaScripti> ().vahinko;
-		}*/
 		if(reppu[4, 2] == null && esineKadessa != null){
 			esineKadessa.transform.position = new Vector3(-10, -10, 0);
 			esineKadessa.transform.parent = null;
@@ -79,7 +70,7 @@ public class Reppu : MonoBehaviour {
 				for (int x = 0; x < 4; x++) {
 					if (reppu [y, x] == null) {
 						coll.gameObject.tag = "EsinePäällä";
-						coll.transform.position = new Vector3 (-10, -10, 0);
+						coll.transform.position = new Vector3 (-10, -10, coll.transform.position.z);
 						reppu [y, x] = coll.gameObject;
 						coll.transform.parent = kuvat [y] [x].transform;
 						return;

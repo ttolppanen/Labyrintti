@@ -10,6 +10,7 @@ public class Liikkuminen : MonoBehaviour {
 	public float syoksyVoima;
 	public float syoksyCooldown;
 	public GameObject inventory;
+	public GameObject kasi;
 	float syoksyAika;
 	public AudioClip miekkaLyonti;
 	Rigidbody2D rb;
@@ -33,7 +34,8 @@ public class Liikkuminen : MonoBehaviour {
 		if (Input.GetKeyDown ("r")) {
 			Application.LoadLevel (Application.loadedLevel);
 		}
-		if (Input.GetMouseButtonDown (0)) {
+		//Lyominen
+		if (Input.GetMouseButtonDown (0) && kasi.transform.childCount != 0) {
 			animaatio.SetTrigger ("Lyonti");
 			GetComponent<AudioSource> ().clip = miekkaLyonti;
 			GetComponent<AudioSource> ().Play ();

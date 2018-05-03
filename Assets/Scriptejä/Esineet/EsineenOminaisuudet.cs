@@ -7,6 +7,7 @@ public class EsineenOminaisuudet : MonoBehaviour {
 
 	public GameObject tekstiPalikka;
 
+	public Texture pikkukuva;
 	public string nimi;
 	public string kuvaus;
 	public bool onkoAse;

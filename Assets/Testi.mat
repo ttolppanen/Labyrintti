@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Testi
-  m_Shader: {fileID: 4800000, guid: b49d60614dafcfb44b3734d151e531a5, type: 3}
+  m_Shader: {fileID: 4800000, guid: a2cfae8082abf4144b1fe560f9c8e440, type: 3}
   m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -77,3 +77,4 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _Paikka: {r: 0, g: 0, b: 0, a: 0}

@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class MiekkaScripti : MonoBehaviour {
 
-	public float vahinko; 
+	public int vahinko; 
+	public int hajonta;
 	public float jaadytysAika;
 
 	GameObject ukko;
@@ -13,13 +14,13 @@ public class MiekkaScripti : MonoBehaviour {
 	void Awake(){
 		om = GetComponent<EsineenOminaisuudet> ();
 		om.nimi = "Sword";
-		vahinko = vahinko + Random.Range (0, 60);
+		vahinko = vahinko - hajonta + Random.Range (0, hajonta * 2);
 		om.kuvaus = "Damage: " + vahinko.ToString () + "\n" + "Nice sword that you can use to swing at stuff.";
 		ukko = GameObject.FindGameObjectWithTag ("Ukko");
 	}
 
 	void OnTriggerEnter2D(Collider2D vihollinen){
-		if (vihollinen.tag == "Vihollinen"){
+		if (vihollinen.tag == "Vihollinen" && tag != "EsineMaassa"){
 			vihollinen.gameObject.GetComponent<Elama> ().OtaVahinkoa (vahinko * ukko.GetComponent<Levelit>().strenght, jaadytysAika);
 		}
 	}

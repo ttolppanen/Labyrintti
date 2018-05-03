@@ -9,72 +9,72 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1341921799620042}
+  m_RootGameObject: {fileID: 1973534432963572}
   m_IsPrefabParent: 1
---- !u!1 &1341921799620042
+--- !u!1 &1973534432963572
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4121581779828102}
-  - component: {fileID: 212433961080273540}
-  - component: {fileID: 61833428623269738}
-  - component: {fileID: 114424540480871938}
-  - component: {fileID: 114550022197148016}
-  - component: {fileID: 114969056071954242}
+  - component: {fileID: 4233286036597404}
+  - component: {fileID: 212686552245487678}
+  - component: {fileID: 61667454453682730}
+  - component: {fileID: 114451662838507502}
+  - component: {fileID: 114007664492380262}
+  - component: {fileID: 114721522364802352}
   m_Layer: 0
-  m_Name: Housut
+  m_Name: LyhytMiekka
   m_TagString: EsineMaassa
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4121581779828102
+--- !u!4 &4233286036597404
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1341921799620042}
+  m_GameObject: {fileID: 1973534432963572}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.92, y: 4.33, z: 4}
+  m_LocalPosition: {x: 5.42, y: 6.83, z: 4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61833428623269738
+--- !u!61 &61667454453682730
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1341921799620042}
+  m_GameObject: {fileID: 1973534432963572}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.39}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.8, y: 1.25}
-    newSize: {x: 0.8, y: 1.25}
+    pivot: {x: 0.5038527, y: 0.11010947}
+    oldSize: {x: 0.4, y: 1}
+    newSize: {x: 0.4, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8, y: 1.25}
+  m_Size: {x: 0.29612064, y: 1}
   m_EdgeRadius: 0
---- !u!114 &114424540480871938
+--- !u!114 &114007664492380262
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1341921799620042}
+  m_GameObject: {fileID: 1973534432963572}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 661e8001e44a02f47ab33aacbe2714e2, type: 3}
@@ -82,48 +82,49 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tekstiPalikka: {fileID: 1235643473062012, guid: f7de30f3db2d5164580d393203fdd653,
     type: 2}
-  pikkukuva: {fileID: 2800000, guid: bdc87e70a86270b459fe40110e11226c, type: 3}
-  nimi: Chainmail trousers
-  kuvaus: Nice trousers you can put your head in
-  onkoAse: 0
+  pikkukuva: {fileID: 2800000, guid: e928281336ae7984b8ed3c089625b042, type: 3}
+  nimi: Short sword
+  kuvaus: Nice sword that you can use to stab at short stuff.
+  onkoAse: 1
   onkoKaytettava: 0
-  onkoPaalleLaitettava: 1
+  onkoPaalleLaitettava: 0
   onkoKypara: 0
   onkoHaarniska: 0
-  onkoHousut: 1
---- !u!114 &114550022197148016
+  onkoHousut: 0
+--- !u!114 &114451662838507502
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1341921799620042}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a62f74684edc874fa362488672503c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  defence: 5
-  defenseRndVali: 10
---- !u!114 &114969056071954242
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1341921799620042}
+  m_GameObject: {fileID: 1973534432963572}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 08122cfe0752cbe4fb86ee7aff66461c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  emo: {fileID: 1341921799620042}
+  emo: {fileID: 1973534432963572}
   pitaakoTehdaVarjot: 0
   varjonReuna: {fileID: 0}
---- !u!212 &212433961080273540
+--- !u!114 &114721522364802352
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1973534432963572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7037138cd758f044bc074121f88efe7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vahinko: 15
+  hajonta: 10
+  jaadytysAika: 0
+--- !u!212 &212686552245487678
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1341921799620042}
+  m_GameObject: {fileID: 1973534432963572}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -131,7 +132,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 76c4857cbac2f294ba6ba493fd4cc45e, type: 2}
+  - {fileID: 2100000, guid: fa43863f6a82ed546b20e36136305078, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -150,12 +151,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8919e95d41e7e784fbab45b6f9127e7f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b092afa4a876de74d9606cf067430fcc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.8, y: 1.25}
+  m_Size: {x: 0.4, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

@@ -16,6 +16,7 @@ public class Elama : MonoBehaviour {
 	public float dmgTekstiOdotusAika;
 	float dmgTekstiAika;
 	float jaadytysAika;
+	float tonaisyKerroin;
 	string vahinkoTeksti;
 	AudioSource aanet;
 	Rigidbody2D rb;
@@ -28,6 +29,7 @@ public class Elama : MonoBehaviour {
 		ollaankoJaadyksissa = false;
 		maxHP = HP;
 		ukko = GameObject.FindGameObjectWithTag ("Ukko");
+		tonaisyKerroin = 1f;
 	}
 
 	void Update(){
@@ -66,6 +68,8 @@ public class Elama : MonoBehaviour {
 		}
 		vahinkoTeksti = Mathf.Round(vahinko).ToString ();
 		veri.GetComponent<ParticleSystem> ().Play ();
+		Vector3 tonaisySuunta = new Vector3(transform.position.x, transform.position.y, 0) - new Vector3(ukko.transform.position.x, ukko.transform.position.y, 0);
+		rb.AddForce (tonaisyKerroin * Mathf.Sqrt(vahinko) * tonaisySuunta, ForceMode2D.Impulse);
 		if (HP <= 0){
 			kuollut = true;
 			ukko.GetComponent<Levelit> ().experience += GetComponent<OlionOminaisuudet> ().expAnto;

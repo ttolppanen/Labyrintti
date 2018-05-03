@@ -80,7 +80,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7037138cd758f044bc074121f88efe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vahinko: 1
+  vahinko: 30
+  hajonta: 15
   jaadytysAika: 0
 --- !u!114 &114481003449696890
 MonoBehaviour:
@@ -109,6 +110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tekstiPalikka: {fileID: 1235643473062012, guid: f7de30f3db2d5164580d393203fdd653,
     type: 2}
+  pikkukuva: {fileID: 2800000, guid: 919846a98daf1a14bb8a616ee9990d9c, type: 3}
   nimi: 
   kuvaus: 
   onkoAse: 1
