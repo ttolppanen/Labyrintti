@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: 83f3351fdea8dac4d838e0c8a4d93a33
+timeCreated: 1526372756
+licenseType: Free
+ShaderImporter:
+  defaultTextures:
+  - _MainTex: {instanceID: 0}
+  - _SaroTex: {fileID: 2800000, guid: fac13db1d0e704d4fafbfdd221ad8255, type: 3}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

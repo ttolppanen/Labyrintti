@@ -69,9 +69,12 @@
 						c = c - length(vektori);   //Pituus vesi jutun keskeltä!
 						c = c / 0.1;
 						float suuntaKerroin = 8.0 / 3 * pow(c, 3) - 8.0 / 3 * c;
-						float tasoitusKerroin = 0.8 / (1 + 3 * pisteet[o].z);
+						float tasoitusKerroin = 0.4 - (0.4 / 2) * pisteet[o].z; // 0.6 - 0.0667 * pow(pisteet[o].z, 2);
+						if(tasoitusKerroin < 0){
+							tasoitusKerroin = 0;
+						}
 						if(length(vektori) > ympMin && length(vektori) < ympMax){
-							col = float4(1, tasoitusKerroin * suuntaKerroin * 0.5 * normalize(vektori).y + 0.5, 1, tasoitusKerroin * suuntaKerroin * 0.5 * normalize(vektori).x + 0.5);
+							col = float4(1, tasoitusKerroin * suuntaKerroin * 0.5 * normalize(vektori).y + 0.5, 1, tasoitusKerroin * suuntaKerroin * 0.5 * normalize(vektori).y + 0.5);
 							return col;
 						}
 					}

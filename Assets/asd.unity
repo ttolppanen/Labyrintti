@@ -4707,6 +4707,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mat: {fileID: 2100000, guid: f1608b220ebc82e4f899e1c68cf3d2be, type: 2}
   nmMat: {fileID: 2100000, guid: 1e80e83b3b9f3be45abfa928a9614fb0, type: 2}
+  saroMat: {fileID: 2100000, guid: cdabd9b46f953294e94b698459906a14, type: 2}
   alkuNM: {fileID: 2800000, guid: 1a581c8ea4fb0b54abb567e0fd4f1a81, type: 3}
   aaltoAika: 5
   uudenPisteenRaja: 1
@@ -4759,7 +4760,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1478843661}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.82, y: 3.82, z: 4.2}
+  m_LocalPosition: {x: 2.7, y: 11.9, z: 4.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7090,7 +7091,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2080910767
 MonoBehaviour:
   m_ObjectHideFlags: 0
